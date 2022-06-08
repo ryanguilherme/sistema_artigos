@@ -54,7 +54,10 @@ public class ArtigosUI {
 		gerencia.adicionarArtigo(a);	
 	}
 	
-	
+	private void modificarArtigo() {
+		String nomeArtigo = lerString("Digite o nome do artigo que deseja editar, ou uma de suas palavras-chave: ");
+		
+	}
 
 
 

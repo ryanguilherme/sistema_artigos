@@ -22,6 +22,8 @@ public interface GerenciaArtigos {
 	public void listarArtigos();
 	// imprime todos os artigos existentes
 
+	boolean editarArtigo(String chave);
+
 	
 
 }

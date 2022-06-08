@@ -98,7 +98,23 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 //		System.out.print("Digite um novo local de publicação: "); artigo.setLocalDePublicacao(lerString(""));
 //		System.out.print("Digite uma nova data de publicação no formado dd/mm/aaaa: "); artigo.setDataDePublicacao(lerString(""));
 //		return true;
-		ArrayList<String> chaves = new ArrayList<String>();
+		Artigo a = new Artigo();
+		System.out.print("Digite um novo nome para o artigo: ");
+		a.setNome(lerString(""));
+		System.out.print("Digite um novo autor: "); a.setAutor(lerString(""));
+		System.out.print("Digite um novo evento de publicação: "); a.setEventoDePublicacao(lerString(""));
+		System.out.print("Digite um novo local de publicação: "); a.setLocalDePublicacao(lerString(""));
+		System.out.print("Digite uma nova data de publicação no formado dd/mm/aaaa: "); a.setDataDePublicacao(lerString(""));
+		for (String x : listaArtigos.keySet()) {
+			if (x != chave && listaArtigos.get(x).getNome() == listaArtigos.get(chave).getNome()) {
+				listaArtigos.remove(x);
+				listaArtigos.put(x, a);
+				
+			}
+		}
+		listaArtigos.remove(chave);
+		listaArtigos.put(chave, a);
+		return true;
 		
 	}
 
