@@ -1,5 +1,6 @@
 package projeto_final;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -57,7 +58,11 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 			System.out.println("Não há nenhum artigo com essa palavra-chave!");
 			return false;
 		}
-		listaArtigos.remove(chave);
+		ArrayList<String> keysParaApagar = new ArrayList<String>();
+		keysParaApagar.addAll(listaArtigos.get(chave).keys);
+		for (String x : keysParaApagar) {
+			listaArtigos.remove(x);
+		}
 		return true;
 		
 	}

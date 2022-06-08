@@ -10,7 +10,7 @@ public class Artigo {
 	private String localDePublicacao;
 	private String autor;
 	private String dataDePublicacao;
-	private ArrayList<String> keys;
+	public ArrayList<String> keys;
 	
 	public Artigo() {
 		super();
