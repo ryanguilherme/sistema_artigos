@@ -2,6 +2,7 @@ package projeto_final;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
 
 public class Artigo {
 	private String nome;
@@ -9,6 +10,7 @@ public class Artigo {
 	private String localDePublicacao;
 	private String autor;
 	private String dataDePublicacao;
+	private ArrayList<String> keys;
 	
 	public Artigo() {
 		super();
@@ -30,6 +32,10 @@ public class Artigo {
 	
 	public String getNome() {
 		return nome;
+	}
+	
+	public void addKey(String key) {
+		keys.add(key);
 	}
 	
 	public void setNome(String nome) {

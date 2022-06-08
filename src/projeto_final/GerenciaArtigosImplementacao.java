@@ -28,6 +28,7 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 				i--;
 			}else {
 				listaArtigos.put(pchave, artigo);
+				artigo.addKey(pchave);
 			}
 		}
 		return true;
