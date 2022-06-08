@@ -1,5 +1,6 @@
 package projeto_final;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArtigosUI {
@@ -58,8 +59,27 @@ public class ArtigosUI {
 		String nomeArtigo = lerString("Digite o nome do artigo que deseja editar, ou uma de suas palavras-chave: ");
 		
 	}
+	
+	private void excluirArtigo() {
+		String nomeArtigo = lerString("Digite o nome do artigo que deseja excluir, ou uma de suas palavras-chave: ");
+		gerencia.apagarArtigo(nomeArtigo);
+	}
 
-
+	private void buscarArtigo() {
+		String nomeArtigo = lerString("Digite o que procura: ");
+		String[] chaves = nomeArtigo.split(" ");
+		int flag = 0;
+		for (String x : chaves) {
+			if (gerencia.getArtigo(x) != null) {
+				gerencia.getArtigo(x).exibirDados();
+				flag = 1;
+				break;
+			}
+		}
+		if (flag == 0) {
+			System.out.println("Nenhum artigo encontrado!");
+		}
+	}
 
 
 

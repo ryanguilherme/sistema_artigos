@@ -87,10 +87,10 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 
 	@Override
 	public boolean editarArtigo(String chave) {
-//		if (artigo.getNome() == "" || artigo == null) {
-//			System.out.println("Não há nenhum artivo editável, tente criar um novo!");
-//			return false;
-//		}
+		if (listaArtigos.get(chave).getNome() == null) {
+			System.out.println("Não há nenhum artivo editável, tente criar um novo!");
+			return false;
+		}
 //		System.out.print("Digite um novo nome para o artigo " + artigo.getNome() + ": ");
 //		artigo.setNome(lerString(""));
 //		System.out.print("Digite um novo autor: "); artigo.setAutor(lerString(""));
