@@ -19,7 +19,7 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 			msg = scanner.nextLine();
 			
 			return msg;
-		}
+	}
 	
 	public void listarArtigos() {
 		for (String x : keyIndividual) {
@@ -41,7 +41,8 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 			}
 			keyUnica = pchave;
 		}
-		keyIndividual.add(keyUnica);		
+		keyIndividual.add(keyUnica);
+		listaArtigos.put(artigo.getNome(), artigo);
 		return true;
 	}
 	
@@ -68,11 +69,13 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 			System.out.println("Não há nenhum artigo com essa palavra-chave!");
 			return false;
 		}
+		String nomeArtigo = listaArtigos.get(chave).getNome();
 		ArrayList<String> keysParaApagar = new ArrayList<String>();
 		keysParaApagar.addAll(listaArtigos.get(chave).keys);
 		for (String x : keysParaApagar) {
 			listaArtigos.remove(x);
 		}
+		listaArtigos.remove(nomeArtigo);
 		return true;
 		
 	}
