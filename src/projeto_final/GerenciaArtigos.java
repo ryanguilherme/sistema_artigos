@@ -14,7 +14,6 @@ public interface GerenciaArtigos {
 	public boolean apagarArtigo(String chave);
 	
 	// edita um artigo com base
-	public boolean editarArtigo(Artigo artigo);
 
 	public Map<String, Artigo> getListaArtigos();
 	// retorna os artigos existenstes

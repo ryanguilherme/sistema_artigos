@@ -118,5 +118,6 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 		
 	}
 
+
 	
 }
