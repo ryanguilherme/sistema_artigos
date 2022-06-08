@@ -63,8 +63,17 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 
 	@Override
 	public boolean editarArtigo(Artigo artigo) {
-		// TODO Auto-generated method stub
-		return false;
+		if (artigo.getNome() == "" || artigo == null) {
+			System.out.println("Não há nenhum artivo editável, tente criar um novo!");
+			return false;
+		}
+		System.out.print("Digite um novo nome para o artigo " + artigo.getNome() + ": ");
+		artigo.setNome(lerString(""));
+		System.out.print("Digite um novo autor: "); artigo.setAutor(lerString(""));
+		System.out.print("Digite um novo evento de publicação: "); artigo.setEventoDePublicacao(lerString(""));
+		System.out.print("Digite um novo local de publicação: "); artigo.setLocalDePublicacao(lerString(""));
+		System.out.print("Digite uma nova data de publicação no formado dd/mm/aaaa: "); artigo.setDataDePublicacao(lerString(""));
+		return true;
 	}
 
 	
