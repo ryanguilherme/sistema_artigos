@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 
 	private Map<String, Artigo> listaArtigos = new HashMap<String, Artigo>();
+	private ArrayList<String> keyIndividual = new ArrayList<String>();
 	
 	private String lerString( String mensagem ) {
 			
@@ -19,9 +20,16 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 			
 			return msg;
 		}
+	
+	public void listarArtigos() {
+		for (String x : keyIndividual) {
+			listaArtigos.get(x).exibirDados();
+		}
+	}
 
 	@Override
 	public boolean adicionarArtigo(Artigo artigo) {
+		String keyUnica = null;
 		for (int i=1; i<=3; i++) {
 			String pchave = lerString("Digite a palavra chave " + i + "para o artigo " + artigo.getNome());
 			if (listaArtigos.get(pchave) != null) {
@@ -31,7 +39,9 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 				listaArtigos.put(pchave, artigo);
 				artigo.addKey(pchave);
 			}
+			keyUnica = pchave;
 		}
+		keyIndividual.add(keyUnica);		
 		return true;
 	}
 	

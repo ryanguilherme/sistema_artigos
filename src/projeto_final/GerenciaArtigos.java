@@ -17,6 +17,10 @@ public interface GerenciaArtigos {
 	public boolean editarArtigo(Artigo artigo);
 
 	public Map<String, Artigo> getListaArtigos();
+	// retorna os artigos existenstes
+	
+	public void listarArtigos();
+	// imprime todos os artigos existentes
 
 	
 
