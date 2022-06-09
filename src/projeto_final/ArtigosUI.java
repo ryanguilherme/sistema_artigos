@@ -16,6 +16,10 @@ public class ArtigosUI {
 					+ "5 - Buscar artigos";
 	}
 	
+	public ArtigosUI(GerenciaArtigos gerenciadorArtigos) {
+		this.gerencia = gerenciadorArtigos;
+	}
+	
 	private void imprimirListaArtigos() {
 		gerencia.listarArtigos();
 	}
