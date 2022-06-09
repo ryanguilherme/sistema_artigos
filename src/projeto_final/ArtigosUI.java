@@ -8,12 +8,12 @@ public class ArtigosUI {
 	private GerenciaArtigos gerencia;
 	
 	private void printMenu() {
-		String menu = "Gerencia coleção de Artigos\n"
+		System.out.println("Gerencia coleção de Artigos\n"
 					+ "1 - Listar artigos da coleção\n"
 					+ "2 - Adicionar artigo à coleção\n"
 					+ "3 - Editar um artigo\n"
 					+ "4 - Remover um artigo\n"
-					+ "5 - Buscar artigos";
+					+ "5 - Buscar artigos");
 	}
 	
 	public ArtigosUI(GerenciaArtigos gerenciadorArtigos) {
