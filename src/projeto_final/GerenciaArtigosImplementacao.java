@@ -32,6 +32,10 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 		String keyUnica = "";
 		for (int i=1; i<=3; i++) {
 			String pchave = lerString("Digite a palavra chave " + i + "para o artigo " + artigo.getNome());
+			if (listaArtigos.get(artigo.getNome()) != null) {
+				System.out.println("Já existe um artigo com esse nome!");
+				return false;
+			}
 			if (listaArtigos.get(pchave) != null) {
 				System.out.println("Essa palavra-chave já está sendo usada, tente outra!");
 				i--;
