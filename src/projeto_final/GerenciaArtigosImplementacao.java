@@ -98,34 +98,51 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 
 	@Override
 	public boolean editarArtigo(String chave) {
-		if (listaArtigos.get(chave).getNome() == null) {
+		if (listaArtigos.get(chave) == null) {
 			System.out.println("Não há nenhum artivo editável, tente criar um novo!");
 			return false;
 		}
-//		System.out.print("Digite um novo nome para o artigo " + artigo.getNome() + ": ");
-//		artigo.setNome(lerString(""));
-//		System.out.print("Digite um novo autor: "); artigo.setAutor(lerString(""));
-//		System.out.print("Digite um novo evento de publicação: "); artigo.setEventoDePublicacao(lerString(""));
-//		System.out.print("Digite um novo local de publicação: "); artigo.setLocalDePublicacao(lerString(""));
-//		System.out.print("Digite uma nova data de publicação no formado dd/mm/aaaa: "); artigo.setDataDePublicacao(lerString(""));
-//		return true;
-		Artigo a = new Artigo();
-		System.out.print("Digite um novo nome para o artigo: ");
-		a.setNome(lerString(""));
-		System.out.print("Digite um novo autor: "); a.setAutor(lerString(""));
-		System.out.print("Digite um novo evento de publicação: "); a.setEventoDePublicacao(lerString(""));
-		System.out.print("Digite um novo local de publicação: "); a.setLocalDePublicacao(lerString(""));
-		System.out.print("Digite uma nova data de publicação no formado dd/mm/aaaa: "); a.setDataDePublicacao(lerString(""));
-		for (String x : listaArtigos.keySet()) {
-			if (x != chave && listaArtigos.get(x).getNome() == listaArtigos.get(chave).getNome()) {
-				listaArtigos.remove(x);
-				listaArtigos.put(x, a);
-				
-			}
+		System.out.println("O que deseja editar no artigo" + listaArtigos.get(chave).getNome() + "?\n"
+						 + "1 - Nome\n"
+						 + "2 - Autor\n"
+						 + "3 - Evento de publicação\n"
+						 + "4 - Local de Publicação\n"
+						 + "5 - Data de publicação\n");
+		int opcao = lerInteiro("Digite a opção desejada: ");
+		
+		switch(opcao) {
+		case 1:
+			listaArtigos.get(chave).setNome(lerString("Digite o novo nome: "));
+			break;
+		case 2:
+			listaArtigos.get(chave).setAutor(lerString("Digite o novo autor: "));
+			break;
+		case 3:
+			listaArtigos.get(chave).setEventoDePublicacao(lerString("Digite o novo evento: "));
+			break;
+		case 4:
+			listaArtigos.get(chave).setLocalDePublicacao(lerString("Digite o novo local: "));
+			break;
+		case 5:
+			listaArtigos.get(chave).setDataDePublicacao(lerString("Digite a nova data no formato dd/mm/aaaa: "));
+			break;
+		default:
+			throw new IllegalArgumentException("Unexpected value: " +  opcao );
 		}
-		listaArtigos.remove(chave);
-		listaArtigos.put(chave, a);
 		return true;
+
+	}
+	
+	private int lerInteiro( String mensagem ) {
+		
+		int numeroLido = 0;
+		
+		System.out.println( mensagem );
+		//Lendo inteiros do teclado. Vamos utilizar para ler a opcao, ler a placa e o valor do veiculo;
+		Scanner scanner = new Scanner( System.in );
+		numeroLido = scanner.nextInt();
+		
+		return numeroLido;
 		
 	}
 
