@@ -10,7 +10,7 @@ public class Artigo {
 	private String localDePublicacao;
 	private String autor;
 	private String dataDePublicacao;
-	public ArrayList<String> keys;
+	//public ArrayList<String> keys;
 	
 	public Artigo() {
 		super();
@@ -32,10 +32,6 @@ public class Artigo {
 	
 	public String getNome() {
 		return nome;
-	}
-	
-	public void addKey(String key) {
-		keys.add(key);
 	}
 	
 	public void setNome(String nome) {

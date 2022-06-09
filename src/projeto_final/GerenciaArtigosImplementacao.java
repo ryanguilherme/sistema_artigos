@@ -29,7 +29,7 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 
 	@Override
 	public boolean adicionarArtigo(Artigo artigo) {
-		String keyUnica = null;
+		String keyUnica = "";
 		for (int i=1; i<=3; i++) {
 			String pchave = lerString("Digite a palavra chave " + i + "para o artigo " + artigo.getNome());
 			if (listaArtigos.get(pchave) != null) {
@@ -37,9 +37,9 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 				i--;
 			}else {
 				listaArtigos.put(pchave, artigo);
-				artigo.addKey(pchave);
+				keyUnica = pchave;
 			}
-			keyUnica = pchave;
+			
 		}
 		keyIndividual.add(keyUnica);
 		listaArtigos.put(artigo.getNome(), artigo);
@@ -70,8 +70,8 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 			return false;
 		}
 		String nomeArtigo = listaArtigos.get(chave).getNome();
-		ArrayList<String> keysParaApagar = new ArrayList<String>();
-		keysParaApagar.addAll(listaArtigos.get(chave).keys);
+//		ArrayList<String> keysParaApagar = new ArrayList<String>();
+//		keysParaApagar.addAll(listaArtigos.get(chave).keys);
 //		for (String x : keysParaApagar) {
 //			listaArtigos.remove(x);
 //		}
