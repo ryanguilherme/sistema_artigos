@@ -57,7 +57,7 @@ public class ArtigosUI {
 	
 	private void modificarArtigo() {
 		String nomeArtigo = lerString("Digite o nome do artigo que deseja editar, ou uma de suas palavras-chave: ");
-		
+		gerencia.editarArtigo(nomeArtigo);
 	}
 	
 	private void excluirArtigo() {
@@ -79,6 +79,12 @@ public class ArtigosUI {
 		if (flag == 0) {
 			System.out.println("Nenhum artigo encontrado!");
 		}
+	}
+	
+	private void deletarArtigo() {
+		String nomeArtigo = lerString("Digite o nome do artigo que deseja excluir, ou uma de suas palavras-chave: ");
+		gerencia.apagarArtigo(nomeArtigo);
+		
 	}
 
 
