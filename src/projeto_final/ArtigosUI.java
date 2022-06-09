@@ -87,22 +87,39 @@ public class ArtigosUI {
 		
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private void avaliarOpcao(int opcao) {
+		switch (opcao) {
+			case 1: 
+				imprimirListaArtigos();
+				break;	
+			case 2: 
+				lerArtigo();
+				break;	
+			case 3: 
+				modificarArtigo();
+				break;
+			case 4: 
+				excluirArtigo();
+				break;		
+			case 5: 
+				buscarArtigo();
+				break;	
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + opcao);}
+	}
+	
+	public void run(){
+		
+		this.running = true;
+		
+		while(running) {
+			printMenu();
+			String msg = "Digite a opcao desejada: ";
+			int opcao = lerInteiro(msg);
+			avaliarOpcao(opcao);
+			
+		}
+		
+	}
 
 }
