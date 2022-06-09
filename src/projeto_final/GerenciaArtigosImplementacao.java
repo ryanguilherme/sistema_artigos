@@ -22,8 +22,16 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 	}
 	
 	public void listarArtigos() {
+		int flag = 0;
 		for (String x : keyIndividual) {
-			listaArtigos.get(x).exibirDados();
+			//listaArtigos.get(x).exibirDados();
+			if (listaArtigos.get(x) != null) {
+				listaArtigos.get(x).exibirDados();
+				flag = 1;
+			}
+		}
+		if (flag == 0) {
+			System.out.println("Não há nenhum artigo cadastrado para exibir!");
 		}
 	}
 
@@ -74,15 +82,14 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 			return false;
 		}
 		String nomeArtigo = listaArtigos.get(chave).getNome();
-//		ArrayList<String> keysParaApagar = new ArrayList<String>();
-//		keysParaApagar.addAll(listaArtigos.get(chave).keys);
-//		for (String x : keysParaApagar) {
-//			listaArtigos.remove(x);
-//		}
+		ArrayList<String> chaves = new ArrayList<String>();
 		for (String x : listaArtigos.keySet()) {
 			if (listaArtigos.get(x).getNome() == nomeArtigo) {
-				listaArtigos.remove(x);
+				chaves.add(x);
 			}
+		}
+		for (String x : chaves) {
+			listaArtigos.remove(x);
 		}
 		//listaArtigos.remove(nomeArtigo);
 		return true;
