@@ -112,7 +112,10 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 		
 		switch(opcao) {
 		case 1:
+			String oldName = listaArtigos.get(chave).getNome();
 			listaArtigos.get(chave).setNome(lerString("Digite o novo nome: "));
+			listaArtigos.put(listaArtigos.get(chave).getNome(), listaArtigos.get(chave));
+			listaArtigos.remove(oldName);
 			break;
 		case 2:
 			listaArtigos.get(chave).setAutor(lerString("Digite o novo autor: "));
