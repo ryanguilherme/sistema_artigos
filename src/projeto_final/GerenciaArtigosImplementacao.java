@@ -97,9 +97,11 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 	}
 	
 	public void buscarLocal(String local) {
+		ArrayList<String> chaves = new ArrayList<String>();
 		for (String x : listaArtigos.keySet()) {
-			if (listaArtigos.get(x).getLocalDePublicacao() == local) {
+			if ((listaArtigos.get(x).getLocalDePublicacao().equals(local)) && !(chaves.contains(listaArtigos.get(x).getNome()))) {
 				listaArtigos.get(x).exibirDados();
+				chaves.add(listaArtigos.get(x).getNome());
 			}
 		}
 	}
