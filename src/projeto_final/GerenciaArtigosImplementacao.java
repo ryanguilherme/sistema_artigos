@@ -60,8 +60,8 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 	
 
 	@Override
-	public Map<String, Artigo> getListaArtigos() {
-		Map<String, Artigo> novaLista = new HashMap<String, Artigo>();
+	public HashMap<String, Artigo> getListaArtigos() {
+		HashMap<String, Artigo> novaLista = new HashMap<String, Artigo>();
 		novaLista.putAll(listaArtigos);
 		return novaLista;
 	}
@@ -94,6 +94,14 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 		//listaArtigos.remove(nomeArtigo);
 		return true;
 		
+	}
+	
+	public void buscarLocal(String local) {
+		for (String x : listaArtigos.keySet()) {
+			if (listaArtigos.get(x).getLocalDePublicacao() == local) {
+				listaArtigos.get(x).exibirDados();
+			}
+		}
 	}
 
 	@Override
@@ -141,7 +149,7 @@ public class GerenciaArtigosImplementacao implements GerenciaArtigos {
 		int numeroLido = 0;
 		
 		System.out.println( mensagem );
-		//Lendo inteiros do teclado. Vamos utilizar para ler a opcao, ler a placa e o valor do veiculo;
+		//Lendo inteiros do teclado. Vamos utilizar para ler a opcao;
 		Scanner scanner = new Scanner( System.in );
 		numeroLido = scanner.nextInt();
 		

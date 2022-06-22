@@ -22,6 +22,8 @@ public interface GerenciaArtigos {
 	// imprime todos os artigos existentes
 
 	boolean editarArtigo(String chave);
+	
+	public void buscarLocal(String local);
 
 	
 

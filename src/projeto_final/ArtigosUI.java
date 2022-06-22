@@ -29,7 +29,7 @@ public class ArtigosUI {
 		int numeroLido = 0;
 		
 		System.out.println( mensagem );
-		//Lendo inteiros do teclado. Vamos utilizar para ler a opcao, ler a placa e o valor do veiculo;
+		//Lendo inteiros do teclado. Vamos utilizar para ler a opcao
 		Scanner scanner = new Scanner( System.in );
 		numeroLido = scanner.nextInt();
 		
@@ -70,25 +70,25 @@ public class ArtigosUI {
 	}
 
 	private void buscarArtigo() {
-		String nomeArtigo = lerString("Digite o que procura: ");
-		String[] chaves = nomeArtigo.split(" ");
-		int flag = 0;
-		for (String x : chaves) {
-			if (gerencia.getArtigo(x) != null) {
-				gerencia.getArtigo(x).exibirDados();
-				flag = 1;
-				break;
+		int opp = lerInteiro("Deseja buscar por palavras (1) ou por local (2): ");
+		if (opp == 1) {
+			String nomeArtigo = lerString("Digite o que procura: ");
+			String[] chaves = nomeArtigo.split(" ");
+			int flag = 0;
+			for (String x : chaves) {
+				if (gerencia.getArtigo(x) != null) {
+					gerencia.getArtigo(x).exibirDados();
+					flag = 1;
+					break;
+				}
 			}
+			if (flag == 0) {
+				System.out.println("Nenhum artigo encontrado!");
+			}}
+		else if (opp == 2) {
+			String local = lerString("Digite o local que deseja buscar (país): ");
+			gerencia.buscarLocal(local);
 		}
-		if (flag == 0) {
-			System.out.println("Nenhum artigo encontrado!");
-		}
-	}
-	
-	private void deletarArtigo() {
-		String nomeArtigo = lerString("Digite o nome do artigo que deseja excluir, ou uma de suas palavras-chave: ");
-		gerencia.apagarArtigo(nomeArtigo);
-		
 	}
 
 	private void avaliarOpcao(int opcao) {
