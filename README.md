@@ -26,5 +26,4 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias e conceitos:
 
 ## 📲 Contato
 
-- Ryan Guilherme - ryan.guilherme@example.com
-- Aluízio Lopes - aluizio.lopes@example.com
+- Ryan Guilherme - ryanguilhermetbt@gmail.com
