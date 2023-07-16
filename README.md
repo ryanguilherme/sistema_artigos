@@ -1,3 +1,30 @@
-# Sistema de artigos em JAVA :computer:
+# Sistema de Busca de Artigos
 
-- Sistema de busca de artigos onde existem os artigos com suas palavras chaves (usadas para busca), o evento de publicação com seus dados e localização, os autores dos artigos, a data de publicação, e etc. O sistema deve permitir manter os cadastros dos eventos e artigos com todos os dados relevantes (inclusão, alteração, consulta e exclusão), e permitir ao usuário externo fazer buscas pelas palavras chaves e o tipo do evento (se nacional ou internacional), retornando os artigos encontrados, onde foram publicados e as demais informações.
+Este repositório contém um projeto desenvolvido como objetivo da disciplina de Programação Orientada a Objetos, ministrada pelo professor Marcio Espindola. O projeto consiste em um sistema de busca de artigos, onde é possível cadastrar eventos de publicação, artigos, autores e realizar buscas por palavras-chave e tipo de evento.
+
+## ⚙️ Funcionalidades
+
+O sistema oferece as seguintes funcionalidades:
+
+- Cadastro, alteração, consulta e exclusão de eventos de publicação.
+- Cadastro, alteração, consulta e exclusão de artigos, incluindo informações como título, palavras-chave, autores e data de publicação.
+- Busca de artigos por palavras-chave e tipo de evento (nacional ou internacional), retornando os resultados encontrados com informações detalhadas sobre a publicação.
+
+## 👥 Equipe 
+
+- [Ryan Guilherme](https://github.com/ryanguilherme)
+- Aluízio Lopes
+
+## 💻 Tecnologias Utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias e conceitos:
+
+- Linguagem de programação: [Java](https://www.java.com)
+- Paradigma de programação: Orientação a Objetos
+- Armazenamento de dados: Banco de Dados Relacional
+- Controle de versão: Git
+
+## 📲 Contato
+
+- Ryan Guilherme - ryan.guilherme@example.com
+- Aluízio Lopes - aluizio.lopes@example.com
